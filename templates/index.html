@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exclusive Deals & Coupons Hub</title> <!-- Updated Title -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fas fa-ticket-alt"></i> Grab Your Special Coupon Now!</h1> <!-- Updated Heading -->
+
+        <!-- Updated Introduction -->
+        <p>Welcome! 🎉 Claim your **exclusive discount coupon** now. Each user gets one coupon per hour. Choose from the available coupons below.</p>
+
+        <div id="message-container"></div>
+
+        <!-- Available Coupons -->
+        <h3><i class="fas fa-list"></i> Available Coupons</h3>
+        <div id="selected-coupon-display" class="selected-coupon">Select your coupon code</div>
+        <div id="coupon-list" class="coupon-list"></div>
+
+        <!-- Claim Your Coupon -->
+        <div id="coupon-section">
+            <button id="claim-btn" class="btn">
+                <i class="fas fa-gift"></i> Claim Your Coupon
+            </button>
+            
+            <div id="coupon-display" style="display: none;" class="coupon-card">
+                <p><i class="fas fa-award"></i> Your coupon code:</p>
+                <div class="coupon-code" id="coupon-code"></div>
+                <p>Use this code at checkout for a special discount!</p>
+            </div>
+        </div>
+
+        <div id="timer-section" style="display: none;" class="info-box">
+            <p><i class="fas fa-hourglass-half"></i> You've already claimed a coupon. You can claim another in <span id="countdown" class="countdown"></span>.</p>
+        </div>
+
+        <!-- System Status -->
+        <div id="admin-section">
+            <h3><i class="fas fa-chart-bar"></i> System Status</h3>
+            <div class="stats">
+                <div class="stat-box">
+                    <p><i class="fas fa-ticket-alt"></i> Coupons Claimed</p>
+                    <div id="claimed-count" class="stat-value">0</div>
+                </div>
+                <div class="stat-box">
+                    <p><i class="fas fa-users"></i> Unique Users</p>
+                    <div id="unique-users" class="stat-value">0</div>
+                </div>
+                <div class="stat-box">
+                    <p><i class="fas fa-tags"></i> Coupons Remaining</p>
+                    <div id="remaining-count" class="stat-value">0</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reset Demo -->
+        <h3><i class="fas fa-sync-alt"></i> Reset Demo</h3>
+        <button id="reset-demo" class="btn">
+            <i class="fas fa-redo"></i> Reset Demonstration
+        </button>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
